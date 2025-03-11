@@ -1,0 +1,118 @@
+/* Index.html - Homepage */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbant's Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Hi, I'm Harbant!</h2>
+        <p>Aspiring Software Engineer, Basketball Enthusiast, and Gamer.</p>
+        <img src="myphoto.jpg" alt="Photo of Harbant">
+        <button onclick="changeBackgroundColor()">Change Background Color</button>
+    </main>
+</body>
+</html>
+
+/* about.html - About Me Page */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p>I am currently in grade 10 and love playing basketball, video games, and coding. I aspire to be a software engineer.</p>
+    </main>
+</body>
+</html>
+
+/* contact.html - Contact Page */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Me</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form onsubmit="displayMessage(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="response"></p>
+    </main>
+</body>
+</html>
+
+/* style.css - External CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 10px;
+}
+
+/* script.js - JavaScript */
+function changeBackgroundColor() {
+    document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+}
+function displayMessage(event) {
+    event.preventDefault();
+    let name = document.getElementById('name').value;
+    let message = document.getElementById('message').value;
+    document.getElementById('response').innerText = `Thank you, ${name}! Your message: "${message}" has been received.`;
+}
