@@ -36,4 +36,73 @@
        
     </main>
 </body>
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Contact Me</h1>
+        <div class="nav-buttons">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+    
+    <main>
+        <h2>Get in Touch</h2>
+        <form onsubmit="event.preventDefault(); displayFormInput();">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="tel">Your Phone Number:</label>
+            <input type="tel" id="tel" placeholder="123-456-7890" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" required></textarea>
+
+            <label for="date">Preferred Contact Date:</label>
+            <input type="date" id="date">
+
+            <label for="time">Preferred Contact Time:</label>
+            <input type="time" id="time">
+
+            <label for="color">Pick a Color (Just for Fun!):</label>
+            <input type="color" id="color">
+
+            <label>Preferred Contact Method:</label>
+            <input type="radio" name="contact-method" value="email" checked> Email
+            <input type="radio" name="contact-method" value="phone"> Phone
+
+            <label for="file">Upload a File (Optional):</label>
+            <input type="file" id="file">
+
+            <label for="range">How Urgent is Your Inquiry? (1-10)</label>
+            <input type="range" id="range" min="1" max="10">
+
+            <label for="search">Search My Website:</label>
+            <input type="search" id="search" placeholder="Search here...">
+
+            <input type="checkbox" id="subscribe"> Subscribe to my newsletter
+
+            <input type="hidden" id="hidden" value="SecretCode123">
+
+            <input type="reset" value="Reset Form">
+            <input type="submit" value="Send Message">
+        </form>
+        
+        <div id="formOutput"></div>
+    </main>
+</body>
 <script src="script.js"></script>
